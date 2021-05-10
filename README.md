@@ -4,10 +4,14 @@ Checks a list of network locations, sorted by preference, for availability and m
 
 ## Setup
 
-Install requirements (only pyinstaller) and run the build skript to generate an executable.
+1. Update the list inside ```src/andMapper.py``` depending on your network location and the drive letter you want.
 
-1. ```pip install -r requirements/base.txt```
-2. ```cd src```
-3. ```./build.cmd```
+2. I recommend to test the script now, before proceeding with the next step.
 
-Afterwards, this executable (inside ```src/dist/andMapper/andMapper.exe```) can then be linked from the startup folder to enable this at autostart.
+3. Install requirements (only pyinstaller) and run the build skript to generate an executable.
+
+   - >```pip install -r requirements/base.txt```
+   - >```cd src```
+   - >```./build.cmd```
+
+4. Afterwards, this executable (inside ```src/dist/andMapper/andMapper.exe```) can then be linked from the startup folder to enable this at autostart.
