@@ -1,23 +1,19 @@
 import os
 import subprocess
 
-root = "./"
+driveList = [r"\\192.168.1.114\share", r"\\10.200.200.4\share"]
 
-driveA = r"\\192.168.1.114\share" #preferred
-driveB = r"\\10.200.200.4\share"
+for drive in driveList:
 
-if os.path.exists(driveA):
-    drive = driveA
-elif os.path.exists(driveB):
-    drive = driveB
-else:
-    print("None of the drives available")
-    exit
+    if os.path.exists(drive):
+        print(f"Selected drive {drive}")
 
-print(f"Selected drive {drive}")
+        # Disconnect anything on S
+        subprocess.call(r'net use s: /del', shell=True)
 
-# Disconnect anything on S
-subprocess.call(r'net use s: /del', shell=True)
+        # Connect to shared drive, use drive letter S
+        subprocess.call(f'net use s: {drive}', shell=True)
 
-# Connect to shared drive, use drive letter S
-subprocess.call(f'net use s: {drive}', shell=True)
+        break
+
+print("Done")
