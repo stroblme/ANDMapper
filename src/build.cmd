@@ -31,7 +31,7 @@ REM )
 
 rem ############################################################################
 echo Building exe
-pyinstaller mapme.py
+pyinstaller andMapper.py
 IF %ERRORLEVEL% NEQ 0 (
     echo %ERRORLEVEL%
     GOTO FAIL
@@ -49,7 +49,7 @@ echo PASS
 GOTO :DONE
 
 :FAIL
-echo !!!!!!!! Building mapme Failed !!!!!!!!
+echo !!!!!!!! Building andMapper Failed !!!!!!!!
 GOTO DONE
 
 :DONE
